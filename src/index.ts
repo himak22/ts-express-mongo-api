@@ -6,10 +6,11 @@ import compression from "compression";
 import cors from "cors";
 import mongoose from "mongoose";
 import router from "./router";
+import dotenv from "dotenv";
 
+dotenv.config(); // Load environment variables
 const app = express();
-const mongoUrl =
-  "mongodb+srv://admin:oacMAjkeCgHHV50P@cluster0.etsvsxq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const mongoUrl = process.env.MONGO_URI;
 
 app.use(
   // Enable CORS
